@@ -1,0 +1,14 @@
+{   
+    // Defaults to first container with build property on docker-compose.yaml
+    "main_container": "deno-app",
+    // or .env.prod / .env.dev ... Defaults to .env
+    "env": ".env",
+    // or docker-compose.dev.yaml...
+    "composer_file": "docker-compose.yaml",
+    // in case there's any config you'd like to take into account from an override file
+    "override_file": "docker-compose.override.yaml",
+    // Aliases to run commands
+    "aliases": {
+        "serve": "deno run --allow-all server.ts"
+    }
+}
