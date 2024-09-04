@@ -1,5 +1,5 @@
 import { basename } from "@std/path";
-import { PropertiesServices } from "./types.ts";
+import { PropertiesServices } from "./types/ComposeSpecification.ts";
 
 export const getDefaultContainer = (services: PropertiesServices): string => {
     const currentDir = basename(Deno.cwd());

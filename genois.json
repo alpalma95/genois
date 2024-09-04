@@ -1,0 +1,8 @@
+{   
+    "main_container": "deno-app",
+    "env": "",
+    "composer_file": "docker-compose.yaml",
+    "aliases": {
+        "serve": "deno run --allow-all server.ts"
+    }
+}

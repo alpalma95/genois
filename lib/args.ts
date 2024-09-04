@@ -1,7 +1,7 @@
 import { parseArgs } from "@std/cli";
 
 const rawArgs = Deno.args;
-const flagName = (flag: string) => flag?.replaceAll("-", "").split("=").at(0);
+const flagName = (flag: string) => flag?.split("=").at(0)?.replaceAll("-", "");
 const controlFlags = ["name"];
 const controlArgs = ["up", "down", "start", "stop"];
 const flags = parseArgs(rawArgs);

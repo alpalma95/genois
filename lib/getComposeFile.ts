@@ -1,4 +1,4 @@
-import { ComposeSpecification } from "./types.ts";
+import { ComposeSpecification } from "./types/ComposeSpecification.ts";
 import { parse } from "@std/yaml";
 import { createYaml } from "./createYaml.ts";
 
@@ -7,7 +7,7 @@ export const getComposeFile = async (): Promise<ComposeSpecification | null> => 
 
     try {
         composeFile = parse(
-            await Deno.readTextFile("docker-compose.yaml"),
+            await Deno.readTextFile(`${Deno.cwd()}/docker-compose.yaml`),
         ) as ComposeSpecification;
     } catch (_e) {
         const status = await createYaml();

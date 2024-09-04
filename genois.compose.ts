@@ -1,4 +1,4 @@
-import type { ComposeSpecification } from "./lib/types.ts";
+import type { ComposeSpecification } from "./lib/types/ComposeSpecification.ts";
 
 const config: ComposeSpecification = {
     version: "3",
