@@ -5,6 +5,7 @@ import { alias } from "./alias.ts";
 
 export const defaultRun = (): void => {
     const { main_container, aliases } = config;
+
     if (aliases[args[0]]) {
         alias();
         return;
