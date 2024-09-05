@@ -1,4 +1,4 @@
-import { GenoisConfig, GenoisEnv } from "../types/App.ts";
+import { GenoisConfig } from "../types/App.ts";
 import { basename } from "@std/path";
 import { filterKeys, filterValues } from "@std/collections";
 import { flags } from "./args.ts";
