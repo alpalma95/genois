@@ -1,0 +1,22 @@
+{   
+    "main_container": "deno-app",
+    "env": "",
+    "compose_file": "docker-compose.prod.yaml",
+    "aliases": {
+        "v": "deno --version",
+        "dev": "deno run --allow-all ./lib/main.ts"
+    },
+    "genois_env": {
+        "dev": {
+            "main_container": "deno-app",
+            "compose_file": "docker-compose.yaml",
+            "aliases": {
+                "v" : "deno --version"
+            }
+        },
+        "prod": {
+            "compose_file": "docker-compose.yaml"
+        }
+    }
+   
+}

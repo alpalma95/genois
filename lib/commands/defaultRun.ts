@@ -1,19 +1,16 @@
-import { args } from "../args.ts";
-import { createCommand } from "../createCommand.ts";
-import { config } from "../getConfig.ts";
-import { alias } from "./alias.ts";
+import { args, flags } from "../utils/args.ts";
+import { createCommand } from "../utils/createCommand.ts";
+import { getConfig } from "../utils/getConfig.ts";
 
-export const defaultRun = (): void => {
-    const { main_container, aliases } = config;
+export const defaultRun = async (): Promise<void> => {
+    const { main_container, aliases } =await getConfig();
+    const containerName = flags.name ?? main_container;
+    const argsList = aliases![args[0]].replace(/\s+/g, " ").split(" ") ?? args;
 
-    if (aliases[args[0]]) {
-        alias();
-        return;
-    }
     createCommand("docker", [
         "exec",
         "-it",
-        main_container,
-        ...args,
+        containerName,
+        ...argsList,
     ]).spawn();
 };

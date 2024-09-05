@@ -1,14 +1,14 @@
-import { config } from "../getConfig.ts";
-import { args } from "../args.ts";
-import { createCommand } from "../createCommand.ts";
+import { getConfig } from "../utils/getConfig.ts";
+import { args } from "../utils/args.ts";
+import { createCommand } from "../utils/createCommand.ts";
 
-export const control = (): void => {
-    const { env, composer_file } = config;
+export const control = async (): Promise<void> => {
+    const { env, compose_file } = await getConfig();
+    const composeFile = compose_file ? ["-f", compose_file] : [];
     const envFile = env ? ["--env-file", env] : [];
     
     createCommand("docker-compose", [...[
-        "-f",
-        composer_file,
+        ...composeFile,
         ...envFile,
     ], ...args]).spawn();
 };
