@@ -7,6 +7,6 @@
   },
   "tasks": {
     "dev": "deno run --allow-all ./lib/main.ts",
-    "build": "deno compile --output=genois --allow-read --allow-all ./lib/main.ts"
+    "build": "rm dist/genois.zip && deno compile --output=genois --allow-all ./lib/main.ts && zip dist/genois.zip genois"
   }
 }
