@@ -1,5 +1,5 @@
 {   
-    "main_container": "deno-app",
+    "main_container": "",
     "env": "",
     "compose_file": "docker-compose.prod.yaml",
     "aliases": {

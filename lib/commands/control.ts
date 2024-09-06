@@ -7,7 +7,8 @@ export const control = async (): Promise<void> => {
     const composeFile = compose_file ? ["-f", compose_file] : [];
     const envFile = env ? ["--env-file", env] : [];
     
-    createCommand("docker-compose", [...[
+    createCommand("docker", [...[
+        "compose",
         ...composeFile,
         ...envFile,
     ], ...args]).spawn();
